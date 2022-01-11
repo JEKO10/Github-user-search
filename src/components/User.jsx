@@ -43,7 +43,38 @@ function User() {
         </button>
       </section>
       <section className="user">
-        <h1>{user.login}</h1>
+        <img src={user.avatar_url} alt="IMG" />
+        <div>
+          <a href={user.html_url} target="__blank">
+            {user.login}
+          </a>
+          <h1>Joined {user.created_at}</h1>
+        </div>
+        <h1>{user.bio === null ? "This profile has no bio" : user.bio}</h1>
+        <div className="reposInfo">
+          <div>
+            <h2>Repo</h2>
+            <h1>{user.public_repos}</h1>
+          </div>
+          <div>
+            <h2>Followers</h2>
+            <h1>{user.followers}</h1>
+          </div>
+          <div>
+            <h2>Following</h2>
+            <h1>{user.following}</h1>
+          </div>
+        </div>
+        <div className="basicInfo">
+          <h1>{user.location === null ? "No Location" : user.location}</h1>
+          <h1>
+            {user.twitter_username === null
+              ? "Not Available"
+              : user.twitter_username}
+          </h1>
+          <h1>{user.blog === "" ? "No Blog" : user.blog}</h1>
+          <h1>{user.company === null ? "No Company" : user.company}</h1>
+        </div>
       </section>
     </>
   );
