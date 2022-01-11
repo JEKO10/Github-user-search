@@ -1,20 +1,52 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 function User() {
-  const [users, setUsers] = useState([]);
+  const [query, setQuery] = useState("");
+  const [user, setUser] = useState([]);
 
   const fetchData = async () => {
-    const response = await fetch("https://api.github.com/users");
-    const data = await response.json();
-    setUsers(data);
-    console.log(data);
+    try {
+      const response = await fetch(`https://api.github.com/users/${query}`);
+      const data = await response.json();
+      setUser(data);
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  return <section></section>;
+  return (
+    <>
+      <section className="searchBar">
+        <svg height="24" width="25" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M10.609 0c5.85 0 10.608 4.746 10.608 10.58 0 2.609-.952 5-2.527 6.847l5.112 5.087a.87.87 0 01-1.227 1.233l-5.118-5.093a10.58 10.58 0 01-6.848 2.505C4.759 21.16 0 16.413 0 10.58 0 4.747 4.76 0 10.609 0zm0 1.74c-4.891 0-8.87 3.965-8.87 8.84 0 4.874 3.979 8.84 8.87 8.84a8.855 8.855 0 006.213-2.537l.04-.047a.881.881 0 01.058-.053 8.786 8.786 0 002.558-6.203c0-4.875-3.979-8.84-8.87-8.84z"
+            fill="#0079ff"
+          />
+        </svg>
+        <input
+          type="text"
+          placeholder="Search GitHub username..."
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value);
+          }}
+        />
+        <button
+          type="submit"
+          onClick={() => {
+            fetchData();
+            setQuery("");
+          }}
+        >
+          Search
+        </button>
+      </section>
+      <section className="user">
+        <h1>{user.login}</h1>
+      </section>
+    </>
+  );
 }
 
 export default User;

@@ -1,4 +1,3 @@
-import SearchBar from "./components/SearchBar";
 import User from "./components/User";
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
           </svg>
         </button>
       </nav>
-      <SearchBar />
       <User />
     </main>
   );
