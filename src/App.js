@@ -1,3 +1,5 @@
+import SearchBar from "./components/SearchBar";
+
 function App() {
   return (
     <main>
@@ -14,6 +16,7 @@ function App() {
           </svg>
         </button>
       </nav>
+      <SearchBar />
     </main>
   );
 }
