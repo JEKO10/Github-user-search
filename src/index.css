@@ -12,7 +12,7 @@ body {
 }
 
 main {
-  margin-top: 10rem;
+  margin-top: 7rem;
 }
 
 nav,
@@ -74,4 +74,52 @@ nav button span {
   width: 75%;
   padding: 5px 5px 5px 25px; /* top right bottom left */
   border-radius: 10px;
+}
+
+.user {
+  max-width: 750px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #fff;
+  padding: 25px 25px;
+  border-radius: 10px;
+  box-shadow: 0px 16px 30px -10px #4660bb33;
+}
+
+.user > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.user img {
+  height: 130px;
+  border-radius: 50%;
+  margin-right: 25px;
+}
+
+.user .name {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.user .reposInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #f5f7ff;
+  margin: 1rem 0;
+  padding: 15px 35px;
+}
+
+.user .basicInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
