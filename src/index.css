@@ -80,10 +80,11 @@ nav button span {
   max-width: 750px;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: flex-start;
   background-color: #fff;
-  padding: 25px 25px;
+  padding: 35px 35px 55px;
+  /* //top right bottom left */
   border-radius: 10px;
   box-shadow: 0px 16px 30px -10px #4660bb33;
 }
@@ -91,8 +92,9 @@ nav button span {
 .user > div {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
+  flex: 2;
 }
 
 .user img {
@@ -103,8 +105,9 @@ nav button span {
 
 .user .name {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .user .reposInfo {
@@ -114,7 +117,8 @@ nav button span {
   width: 100%;
   background-color: #f5f7ff;
   margin: 1rem 0;
-  padding: 15px 35px;
+  padding: 25px 35px;
+  border-radius: 10px;
 }
 
 .user .basicInfo {
@@ -122,4 +126,24 @@ nav button span {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+.user a {
+  color: #0177fb;
+  text-decoration: none;
+}
+
+.user #date,
+.user #bio,
+.user .reposInfo h2 {
+  font-size: 1rem;
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+.user #bio {
+  margin: 0.5rem 0;
+}
+
+.user .reposInfo h1 {
 }

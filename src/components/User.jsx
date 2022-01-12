@@ -51,11 +51,11 @@ function User() {
               <a href={user.html_url} target="__blank">
                 @{user.login}
               </a>
-              <h1>
-                {user.bio === null ? "This profile has no bio" : user.bio}
+              <h1 id="bio">
+                {user.bio === null ? "This profile has no bio." : user.bio}
               </h1>
             </div>
-            <h1>Joined {user.created_at}</h1>
+            <h1 id="date">Joined {user.created_at.slice(0, -10)}</h1>
           </div>
           <div className="reposInfo">
             <div>
