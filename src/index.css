@@ -97,7 +97,7 @@ nav button span {
   flex: 2;
 }
 
-.user img {
+.user > img {
   height: 130px;
   border-radius: 50%;
   margin-right: 25px;
@@ -116,14 +116,14 @@ nav button span {
   align-items: center;
   width: 100%;
   background-color: #f5f7ff;
-  margin: 1rem 0;
+  margin: 1rem 0 2rem 0;
   padding: 25px 35px;
   border-radius: 10px;
 }
 
 .user .basicInfo {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
 }
@@ -145,5 +145,30 @@ nav button span {
   margin: 0.5rem 0;
 }
 
-.user .reposInfo h1 {
+.user .basicInfo > div:last-child {
+  margin: 0 4rem;
+}
+
+.user .basicInfo h1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1rem;
+  opacity: 0.8;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.user .basicInfo h1 img {
+  height: 20px;
+  margin-right: 0.8rem;
+}
+
+.user .basicInfo h1 a {
+  color: #000;
+}
+
+.user .basicInfo h1 a:hover {
+  text-decoration: underline;
+  color: #0177fb;
 }

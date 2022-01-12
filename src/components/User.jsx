@@ -1,4 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import Location from "../images/icon-location.svg";
+import Twitter from "../images/icon-twitter.svg";
+import Blog from "../images/icon-website.svg";
+import Company from "../images/icon-company.svg";
 
 function User() {
   const [query, setQuery] = useState("");
@@ -42,51 +46,72 @@ function User() {
           Search
         </button>
       </section>
-      <section className="user">
-        <img src={user.avatar_url} alt="IMG" />
-        <div>
-          <div className="name">
-            <div>
-              <h1>{user.name}</h1>
-              <a href={user.html_url} target="__blank">
-                @{user.login}
-              </a>
-              <h1 id="bio">
-                {user.bio === null ? "This profile has no bio." : user.bio}
-              </h1>
+      {user.length !== 0 ? (
+        <section className="user">
+          <img src={user.avatar_url} alt="IMG" />
+          <div>
+            <div className="name">
+              <div>
+                <h1>{user.name}</h1>
+                <a href={user.html_url} target="__blank">
+                  @{user.login}
+                </a>
+                <h1 id="bio">
+                  {user.bio === null ? "This profile has no bio." : user.bio}
+                </h1>
+              </div>
+              <h1 id="date">Joined {user.created_at.slice(0, -10)}</h1>
             </div>
-            <h1 id="date">Joined {user.created_at.slice(0, -10)}</h1>
+            <div className="reposInfo">
+              <div>
+                <h2>Repo</h2>
+                <h1>{user.public_repos}</h1>
+              </div>
+              <div>
+                <h2>Followers</h2>
+                <h1>{user.followers}</h1>
+              </div>
+              <div>
+                <h2>Following</h2>
+                <h1>{user.following}</h1>
+              </div>
+            </div>
+            <div className="basicInfo">
+              <div>
+                <h1>
+                  <img src={Location} alt="IMG" />
+                  {user.location === null ? "No Location" : user.location}
+                </h1>
+                <h1>
+                  <img src={Twitter} alt="IMG" />
+                  <a
+                    href={`https://twitter.com/${user.twitter_username}`}
+                    target="__blank"
+                  >
+                    {user.twitter_username === null
+                      ? "Not Available"
+                      : "@" + user.twitter_username}
+                  </a>
+                </h1>
+              </div>
+              <div>
+                <h1>
+                  <img src={Blog} alt="IMG" />
+                  <a href={`https://${user.blog}`} target="__blank">
+                    {user.blog === "" ? "No Blog" : user.blog}
+                  </a>
+                </h1>
+                <h1>
+                  <img src={Company} alt="IMG" />
+                  {user.company === null ? "No Company" : user.company}
+                </h1>
+              </div>
+            </div>
           </div>
-          <div className="reposInfo">
-            <div>
-              <h2>Repo</h2>
-              <h1>{user.public_repos}</h1>
-            </div>
-            <div>
-              <h2>Followers</h2>
-              <h1>{user.followers}</h1>
-            </div>
-            <div>
-              <h2>Following</h2>
-              <h1>{user.following}</h1>
-            </div>
-          </div>
-          <div className="basicInfo">
-            <div>
-              <h1>{user.location === null ? "No Location" : user.location}</h1>
-              <h1>
-                {user.twitter_username === null
-                  ? "Not Available"
-                  : user.twitter_username}
-              </h1>
-            </div>
-            <div>
-              <h1>{user.blog === "" ? "No Blog" : user.blog}</h1>
-              <h1>{user.company === null ? "No Company" : user.company}</h1>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      ) : (
+        <h1>JEKO</h1>
+      )}
     </>
   );
 }
