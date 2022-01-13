@@ -7,13 +7,13 @@ import Company from "../images/icon-company.svg";
 function User() {
   const [query, setQuery] = useState("");
   const [user, setUser] = useState([]);
+  const [isClicked, setIsClicked] = useState(false);
 
   const fetchData = async () => {
     try {
       const response = await fetch(`https://api.github.com/users/${query}`);
       const data = await response.json();
       setUser(data);
-      console.log(data);
     } catch (err) {
       console.log(err);
     }
@@ -41,12 +41,15 @@ function User() {
           onClick={() => {
             fetchData();
             setQuery("");
+            setTimeout(() => {
+              setIsClicked(true);
+            }, 3000);
           }}
         >
           Search
         </button>
       </section>
-      {user.length !== 0 ? (
+      {user.length !== 0 && user.message !== "Not Found" ? (
         <section className="user">
           <img src={user.avatar_url} alt="IMG" />
           <div>
@@ -110,7 +113,9 @@ function User() {
           </div>
         </section>
       ) : (
-        <h1>JEKO</h1>
+        <h1 id="noUser">
+          {isClicked === false ? "" : "No user match input value!"}
+        </h1>
       )}
     </>
   );

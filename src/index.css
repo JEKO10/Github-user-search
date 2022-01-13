@@ -172,3 +172,8 @@ nav button span {
   text-decoration: underline;
   color: #0177fb;
 }
+
+#noUser {
+  color: red;
+  text-align: center;
+}
