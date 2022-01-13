@@ -8,12 +8,17 @@ function User() {
   const [query, setQuery] = useState("");
   const [user, setUser] = useState([]);
   const [isClicked, setIsClicked] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchData = async () => {
+    setIsLoading(true);
     try {
       const response = await fetch(`https://api.github.com/users/${query}`);
       const data = await response.json();
       setUser(data);
+      if (user !== []) {
+        setIsLoading(false);
+      }
     } catch (err) {
       console.log(err);
     }
@@ -43,13 +48,15 @@ function User() {
             setQuery("");
             setTimeout(() => {
               setIsClicked(true);
-            }, 3000);
+            }, 500);
           }}
         >
           Search
         </button>
       </section>
-      {user.length !== 0 && user.message !== "Not Found" ? (
+      {user.length !== 0 &&
+      user.message !== "Not Found" &&
+      isLoading === false ? (
         <section className="user">
           <img src={user.avatar_url} alt="IMG" />
           <div>
@@ -112,8 +119,21 @@ function User() {
             </div>
           </div>
         </section>
+      ) : isLoading === true ? (
+        <div>
+          {isClicked === false ? (
+            ""
+          ) : (
+            <div>
+              <div className="loading"></div>
+              <h6 id="errorLoading">
+                *If it`s loading long, it`s not avalible at the moment. :(
+              </h6>
+            </div>
+          )}
+        </div>
       ) : (
-        <h1 id="noUser">
+        <h1 id="error">
           {isClicked === false ? "" : "No user match input value!"}
         </h1>
       )}
