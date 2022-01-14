@@ -9,10 +9,15 @@
 
 body {
   background-color: #f5f7ff;
+  transition: all 1s ease;
 }
 
 main {
   margin-top: 7rem;
+}
+
+section {
+  transition: all 1s ease;
 }
 
 nav,
@@ -22,10 +27,10 @@ nav,
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 1s ease;
 }
 
 nav h1 {
-  opacity: 0.8;
   font-weight: 700;
 }
 
@@ -74,6 +79,7 @@ nav button span {
   width: 75%;
   padding: 5px 5px 5px 25px; /* top right bottom left */
   border-radius: 10px;
+  transition: all 1s ease;
 }
 
 .user {
@@ -119,6 +125,7 @@ nav button span {
   margin: 1rem 0 2rem 0;
   padding: 25px 35px;
   border-radius: 10px;
+  transition: all 1s ease;
 }
 
 .user .basicInfo {
@@ -202,6 +209,14 @@ nav button span {
   background-color: #1e2b48;
 }
 
+.dark::placeholder {
+  color: #fff;
+}
+
 .darkText {
   color: #fff;
+}
+
+.darkRepo {
+  background-color: #141d2e !important;
 }

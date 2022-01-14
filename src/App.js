@@ -19,7 +19,9 @@ function App() {
             setIsDark(!isDark);
           }}
         >
-          <span className="color">{isDark ? "Light" : "Dark"}</span>
+          <span className={isDark ? `darkText` : ""}>
+            {isDark ? "Light" : "Dark"}
+          </span>
           {isDark ? (
             <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
               <g fill="#FFF" fillRule="nonzero">

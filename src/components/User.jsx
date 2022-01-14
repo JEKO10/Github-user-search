@@ -34,7 +34,7 @@ function User({ isDark }) {
           />
         </svg>
         <input
-          id="input"
+          className={isDark ? `dark darkText` : ""}
           type="text"
           placeholder="Search GitHub username..."
           value={query}
@@ -75,19 +75,19 @@ function User({ isDark }) {
                 Joined {user.created_at.slice(0, -10)}
               </h1>
             </div>
-            <div className="reposInfo">
+            <div className={isDark ? `reposInfo darkRepo` : "reposInfo"}>
               <div>
-                <h2>Repo</h2>
+                <h2 className={isDark ? `darkText` : ""}>Repo</h2>
                 <h1 className={isDark ? `darkText` : ""}>
                   {user.public_repos}
                 </h1>
               </div>
               <div>
-                <h2>Followers</h2>
+                <h2 className={isDark ? `darkText` : ""}>Followers</h2>
                 <h1 className={isDark ? `darkText` : ""}>{user.followers}</h1>
               </div>
               <div>
-                <h2>Following</h2>
+                <h2 className={isDark ? `darkText` : ""}>Following</h2>
                 <h1 className={isDark ? `darkText` : ""}>{user.following}</h1>
               </div>
             </div>
