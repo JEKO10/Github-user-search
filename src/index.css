@@ -13,7 +13,7 @@ body {
 }
 
 main {
-  margin-top: 7rem;
+  margin-top: 5rem;
 }
 
 section {
@@ -199,12 +199,6 @@ nav button span {
   animation: spinner 0.6s linear infinite;
 }
 
-@keyframes spinner {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .dark {
   background-color: #1e2b48;
 }
@@ -219,4 +213,38 @@ nav button span {
 
 .darkRepo {
   background-color: #141d2e !important;
+}
+
+@media screen and (max-width: 780px) {
+  nav,
+  .searchBar {
+    max-width: 600px;
+  }
+
+  .user {
+    max-width: 650px;
+  }
+
+  .user > img {
+    height: 100px;
+    margin: 0 25px;
+  }
+
+  .user #date {
+    padding: 0 1rem;
+  }
+
+  .user #bio {
+    max-width: 300px;
+  }
+
+  .user .reposInfo {
+    width: 95%;
+  }
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
 }
