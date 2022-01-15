@@ -273,6 +273,62 @@ nav button span {
   }
 }
 
+@media screen and (max-width: 555px) {
+  nav,
+  .searchBar {
+    max-width: 300px;
+  }
+
+  .searchBar {
+    padding: 10px 5px;
+  }
+
+  .searchBar img {
+    display: none;
+  }
+
+  .searchBar input {
+    font-size: 1rem;
+    padding: 5px; /* top right bottom left */
+  }
+
+  .searchBar input::placeholder {
+    font-size: 0.8rem;
+  }
+
+  .searchBar button {
+    padding: 5px 10px;
+    font-size: 1rem;
+  }
+
+  .user {
+    max-width: 300px;
+  }
+
+  .user > img {
+    height: 100px;
+  }
+
+  .user .name {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .user .name a {
+    display: block;
+  }
+
+  .user .name h1,
+  .user .name a {
+    text-align: center;
+  }
+
+  .user #bio {
+    margin: 1rem 0;
+  }
+}
+
 @keyframes spinner {
   to {
     transform: rotate(360deg);
