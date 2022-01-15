@@ -243,6 +243,36 @@ nav button span {
   }
 }
 
+@media screen and (max-width: 670px) {
+  nav,
+  .searchBar {
+    max-width: 500px;
+  }
+
+  .searchBar input {
+    font-size: 1.2rem;
+    width: 67%;
+    padding: 5px 5px 5px 10px; /* top right bottom left */
+  }
+
+  .user {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 530px;
+    padding: 35px;
+  }
+
+  .user > img {
+    height: 130px;
+    margin-bottom: 25px;
+  }
+
+  .user .reposInfo {
+    width: 100%;
+  }
+}
+
 @keyframes spinner {
   to {
     transform: rotate(360deg);
