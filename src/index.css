@@ -274,13 +274,17 @@ nav button span {
 }
 
 @media screen and (max-width: 555px) {
+  main {
+    margin: 3rem 0;
+  }
+
   nav,
   .searchBar {
     max-width: 300px;
   }
 
   .searchBar {
-    padding: 10px 5px;
+    padding: 5px;
   }
 
   .searchBar img {
@@ -297,12 +301,13 @@ nav button span {
   }
 
   .searchBar button {
-    padding: 5px 10px;
+    padding: 10px;
     font-size: 1rem;
   }
 
   .user {
     max-width: 300px;
+    padding: 25px;
   }
 
   .user > img {
@@ -326,6 +331,33 @@ nav button span {
 
   .user #bio {
     margin: 1rem 0;
+  }
+
+  .user .reposInfo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    width: 100%;
+    margin: 1rem auto 2rem auto;
+    padding: 25px 10px;
+  }
+
+  .user .reposInfo div {
+    text-align: center;
+  }
+
+  .user .reposInfo div:first-of-type {
+    grid-column: span 2;
+    order: 3;
+    margin-top: 0.5rem;
+  }
+
+  .user .basicInfo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .user .basicInfo > div:last-child {
+    margin: 0;
   }
 }
 
