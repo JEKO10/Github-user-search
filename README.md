@@ -13,7 +13,7 @@
 
 ## Project task
 
-This is a solution to the [Front end mentor Clock app](https://www.frontendmentor.io/challenges/clock-app-LMFaxFwrM). This project displays random quote and time based on the visitor's location.
+This is a solution to the [Front end GitHub user search app](https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6). This project displays the GitHub user based on the username client searched.
 
 ## Project overview
 
@@ -32,4 +32,4 @@ View the current time and location information (day of the year, day of the week
 
 ## Live preview
 
-[Click for live preview](https://jeko10.github.io/Clock-App/)
+[Click for live preview](https://jeko10.github.io/Github-user-search/)
