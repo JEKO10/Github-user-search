@@ -17,7 +17,7 @@ This is a solution to the [Front end GitHub user search app](https://www.fronten
 
 ## Project overview
 
-This is a simple project, and it is also one of my first in which I used third-party API. I used GitHub API to find users based on the username client entered. I used the fetch method for getting data. I included a theme switcher as well. I used local storage to save the user's selected theme.
+This is a simple project, and one of the first in which I used a third-party API. I used GitHub API to find users based on the username client entered. To get API data, I used the fetch method. I also included a theme switcher and used local storage to save the user's selected theme.
 
 
 ## Built with
