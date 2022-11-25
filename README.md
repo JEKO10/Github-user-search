@@ -17,16 +17,13 @@ This is a solution to the [Front end GitHub user search app](https://www.fronten
 
 ## Project overview
 
-View the current time and location information (day of the year, day of the week, timezone, week number) based on your IP address. The correct greeting and background image are shown based on the time of the day you are visiting the site. Quotable API generates a random quote on the top of the page, which you can refresh and generate a new quote. The website is fully responsive.
+This is a simple project, and also one of my first in which I used third-party API. I used GitHub API for searching users based on the username client entered. I used the fetch method for getting data. I implemented a theme switcher as well. I used local storage for setting up and getting theme value.
 
 ## Built with
 
 - React
-- Sass
-- Ipbase API
-- Quotable API
-- Worldtime API
-- Figma
+- CSS
+- GitHub API
 - JSON
 - GitHub Pages
 

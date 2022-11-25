@@ -1,8 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import User from "./components/User";
 
+const getUserTheme = () => {
+  const result = JSON.parse(localStorage.getItem("theme"));
+  return result;
+};
+
 function App() {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(getUserTheme());
+
+  useEffect(() => {
+    localStorage.setItem("theme", JSON.stringify(isDark));
+  }, [isDark]);
 
   if (isDark) {
     document.getElementsByTagName("body")[0].style.backgroundColor = "#141d2e";

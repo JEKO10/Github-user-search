@@ -37,6 +37,15 @@ function User({ isDark }) {
           onChange={(e) => {
             setQuery(e.target.value);
           }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              fetchData();
+              setQuery("");
+              setTimeout(() => {
+                setIsClicked(true);
+              }, 500);
+            }
+          }}
         />
         <button
           type="submit"
