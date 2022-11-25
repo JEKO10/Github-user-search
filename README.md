@@ -1,5 +1,5 @@
 <h1 align="center">
-  Clock App <br/> 
+  Github use search <br/> 
   (React)
 </h1>
 <br>
@@ -17,7 +17,8 @@ This is a solution to the [Front end GitHub user search app](https://www.fronten
 
 ## Project overview
 
-This is a simple project, and also one of my first in which I used third-party API. I used GitHub API for searching users based on the username client entered. I used the fetch method for getting data. I implemented a theme switcher as well. I used local storage for saving user's selected theme.
+This is a simple project, and it is also one of my first in which I used third-party API. I used GitHub API to find users based on the username client entered. I used the fetch method for getting data. I included a theme switcher as well. I used local storage to save the user's selected theme.
+
 
 ## Built with
 
